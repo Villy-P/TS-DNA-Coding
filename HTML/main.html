@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/grid.css">
+    <link rel="stylesheet" href="../CSS/dropdowns.css">
 </head>
 <body>
     <h1 class="header center"><b>DNA Coding</b></h1>
@@ -14,7 +15,7 @@
         <button id="activateChart" class="center" onclick="clickDisplayTranslationChart()">Show Translation Chart</button>
     </div>
 
-    <br
+    <br>
 
     <div class="container" style="display: none;">
         <div class="First-mRNA-Base">First mRNA Base</div>
@@ -67,6 +68,24 @@
         <div class="-----C-----">C</div>
         <div class="-----A-----">A</div>
         <div class="-----G-----">G</div>
+    </div>
+
+    <br>
+
+    <div class="centerButton">
+        <label for="activities"></label>
+        <select name="activities" id="activities">
+            <option value="dna-to-rna">Match DNA</option>
+        </select>
+
+        <label for="settings"></label>
+        <select name="settings" id="settings">
+            <option value="1-value">1 Value</option>
+            <option value="3-value">3 Values</option>
+            <option value="3-value">5 Values</option>
+            <option value="3-value">10 Values</option>
+            <option value="random">Random</option>
+        </select>
     </div>
 
     <script src="../src/JS/buttons.js"></script>
