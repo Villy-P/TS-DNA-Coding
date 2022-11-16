@@ -8,13 +8,27 @@
     padding: 10px;
 }
 
-.container > div {
+#problem {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5px;
+    background-color: black;
+    padding: 10px;
+    grid-template-rows: 1fr 1fr;
+}
+
+.container > div, #problem > div {
     background-color: white;
     padding: 5px 0;
     font-size: 10px;
     align-items: center;
     justify-content: center;
     display: flex;
+    font-family: sans-serif;
+}
+
+#problem > div {
+    font-size: 30px;
 }
 
 .First-mRNA-Base { grid-area: 1 / 1 / 2 / 2; }

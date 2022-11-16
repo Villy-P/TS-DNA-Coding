@@ -1,13 +1,18 @@
 let displayTranslationChart: boolean = false;
 let displayHint: boolean = false;
 
+let valueSetting: number = 2;
+
 const chartButton: Element = document.querySelector("#activateChart")!;
 const chart: Element = document.querySelector(".container")!;
 
 const hintButton: Element = document.querySelector("#activateHint")!;
 const hint: Element = document.querySelector("#hint")!;
 
-const activitiesDropdown = document.getElementById("activities") as HTMLSelectElement;
+const activitiesDropdown: HTMLSelectElement = document.getElementById("activities") as HTMLSelectElement;
+const settingsDropdown: HTMLSelectElement = document.getElementById("settings") as HTMLSelectElement;
+
+const problem: HTMLElement = document.getElementById("problem")!;
 
 function clickDisplayTranslationChart(): void {
     displayTranslationChart = !displayTranslationChart;
@@ -29,3 +34,16 @@ function clickDisplayHint(): void {
     hintButton.innerHTML = displayHint ? "Hide Hint" : "Show Hint";
     hint.innerHTML = displayHint ? getHint() : "";
 }
+
+function generateProblem(): void {
+    problem.setAttribute("style", `grid-template-columns: ${"1fr ".repeat(valueSetting)};`);
+    for (let i of ["CGC", "ATA"]) {
+        let cell: HTMLDivElement = document.createElement("div");
+        cell.innerHTML = i;
+        problem.appendChild(cell);
+    }
+    for (let i = 0; i < valueSetting; i++)
+        problem.appendChild(document.createElement("textarea"));
+}
+
+generateProblem();
