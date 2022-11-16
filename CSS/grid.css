@@ -1,0 +1,69 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 5px;
+    background-color: black;
+    padding: 10px;
+}
+
+.container > div {
+    background-color: white;
+    padding: 5px 0;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.First-mRNA-Base { grid-area: 1 / 1 / 2 / 2; }
+.A { grid-area: 1 / 4 / 2 / 5; }
+.G { grid-area: 1 / 5 / 2 / 6; }
+.Third-mRNA-Base { grid-area: 1 / 6 / 2 / 7; }
+.U { grid-area: 1 / 2 / 2 / 3; }
+.C { grid-area: 1 / 3 / 2 / 4; }
+.Phenylalanine-\(Phe\) { grid-area: 2 / 2 / 4 / 3; }
+.Serine-\(Ser\) { grid-area: 2 / 3 / 6 / 4; }
+.Tyrosine-\(Tyr\) { grid-area: 2 / 4 / 4 / 5; }
+.Cysteine-\(Cys\) { grid-area: 2 / 5 / 4 / 6; }
+.Stop { grid-area: 4 / 5 / 5 / 6; }
+.-U- { grid-area: 2 / 1 / 6 / 2; }
+.-C- { grid-area: 6 / 1 / 10 / 2; }
+.-A- { grid-area: 10 / 1 / 14 / 2; }
+.-G- { grid-area: 14 / 1 / 18 / 2; }
+.-Stop- { grid-area: 4 / 4 / 6 / 5; }
+.--U-- { grid-area: 2 / 6 / 3 / 7; }
+.--C-- { grid-area: 3 / 6 / 4 / 7; }
+.--A-- { grid-area: 4 / 6 / 5 / 7; }
+.--G-- { grid-area: 5 / 6 / 6 / 7; }
+.Tryptophan-\(Trp\) { grid-area: 5 / 5 / 6 / 6; }
+.Leucine-\(Leu\) { grid-area: 4 / 2 / 10 / 3; }
+.Proline-\(Pro\) { grid-area: 6 / 3 / 10 / 4; }
+.Histidine-\(His\) { grid-area: 6 / 4 / 8 / 5; }
+.Glutamine-\(Gln\) { grid-area: 8 / 4 / 10 / 5; }
+.Arginine-\(Arg\) { grid-area: 6 / 5 / 10 / 6; }
+.---U--- { grid-area: 6 / 6 / 7 / 7; }
+.---C--- { grid-area: 7 / 6 / 8 / 7; }
+.---A--- { grid-area: 8 / 6 / 9 / 7; }
+.---G--- { grid-area: 9 / 6 / 10 / 7; }
+.Isoleucine-\(Ile\) { grid-area: 10 / 2 / 13 / 3; }
+.Methionine-\(Met\) { grid-area: 13 / 2 / 14 / 3; }
+.Threonine-\(Thr\) { grid-area: 10 / 3 / 14 / 4; }
+.Asparagine-\(Asn\) { grid-area: 10 / 4 / 12 / 5; }
+.Lysine-\(Lys\) { grid-area: 12 / 4 / 14 / 5; }
+.-Serine-\(Ser\)- { grid-area: 10 / 5 / 12 / 6; }
+.-Arginine-\(Arg\)- { grid-area: 12 / 5 / 14 / 6; }
+.----U---- { grid-area: 10 / 6 / 11 / 7; }
+.----C---- { grid-area: 11 / 6 / 12 / 7; }
+.----A---- { grid-area: 12 / 6 / 13 / 7; }
+.----G---- { grid-area: 13 / 6 / 14 / 7; }
+.Valine-\(Val\) { grid-area: 14 / 2 / 18 / 3; }
+.Alanine-\(Ala\) { grid-area: 14 / 3 / 18 / 4; }
+.Aspartic-Acid-\(Asp\) { grid-area: 14 / 4 / 16 / 5; }
+.Glutamic-Acid-\(Glu\) { grid-area: 16 / 4 / 18 / 5; }
+.Glycine-\(Gly\) { grid-area: 14 / 5 / 18 / 6; }
+.-----U----- { grid-area: 14 / 6 / 15 / 7; }
+.-----C----- { grid-area: 15 / 6 / 16 / 7; }
+.-----A----- { grid-area: 16 / 6 / 17 / 7; }
+.-----G----- { grid-area: 17 / 6 / 18 / 7; }
