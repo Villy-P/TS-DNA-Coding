@@ -10,6 +10,7 @@ const activitiesDropdown = document.getElementById("activities");
 const settingsDropdown = document.getElementById("settings");
 const solveButton = document.querySelector("#solve");
 const problem = document.getElementById("problem");
+const allGood = document.getElementById("allGood");
 function clickDisplayTranslationChart() {
     displayTranslationChart = !displayTranslationChart;
     chart.setAttribute("style", `display: ${displayTranslationChart ? "grid" : "none"};`);
@@ -50,9 +51,17 @@ function swap(s) {
 }
 function solve() {
     const children = problem.children;
+    let foundWrong = false;
     for (let i = valueSetting; i < children.length; i++) {
         children[i].classList.remove("correct");
         children[i].classList.remove("wrong");
-        swap(children[i].value.toLowerCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
+        swap(children[i].value.toUpperCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
+        if (children[i].classList.contains("wrong"))
+            foundWrong = true;
+    }
+    if (!foundWrong) {
+        for (let i of children)
+            i.disabled = true;
+        allGood.setAttribute("style", "display: text");
     }
 }

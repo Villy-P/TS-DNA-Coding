@@ -3,7 +3,10 @@ let valueSetting: number = 5;
 const letters: string[] = ["G", "C", "A", "T"];
 
 function generateProblem(): void {
+    for (let i of problem.children)
+        (i as HTMLInputElement).disabled = false;
     currentProblem = [];
+    problem.innerHTML = "";
     problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);
     for (let i = 0; i < valueSetting; i++) {
         const cell: HTMLDivElement = document.createElement("div");

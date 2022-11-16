@@ -3,18 +3,20 @@ let displayHint: boolean = false;
 
 let currentProblem: string[] = [];
 
-const chartButton: Element = document.querySelector("#activateChart")!;
-const chart: Element = document.querySelector(".container")!;
+const chartButton: HTMLElement = document.querySelector("#activateChart")!;
+const chart: HTMLElement = document.querySelector(".container")!;
 
-const hintButton: Element = document.querySelector("#activateHint")!;
-const hint: Element = document.querySelector("#hint")!;
+const hintButton: HTMLElement = document.querySelector("#activateHint")!;
+const hint: HTMLElement = document.querySelector("#hint")!;
 
 const activitiesDropdown: HTMLSelectElement = document.getElementById("activities") as HTMLSelectElement;
 const settingsDropdown: HTMLSelectElement = document.getElementById("settings") as HTMLSelectElement;
 
-const solveButton: Element = document.querySelector("#solve")!;
+const solveButton: HTMLElement = document.querySelector("#solve")!;
 
 const problem: HTMLElement = document.getElementById("problem")!;
+
+const allGood: HTMLElement = document.getElementById("allGood")!;
 
 function clickDisplayTranslationChart(): void {
     displayTranslationChart = !displayTranslationChart;
@@ -60,9 +62,17 @@ function swap(s: string): string {
 
 function solve(): void {
     const children: HTMLCollection = problem.children;
+    let foundWrong: boolean = false;
     for (let i = valueSetting; i < children.length; i++) {
         children[i].classList.remove("correct");
         children[i].classList.remove("wrong");
-        swap((children[i] as HTMLInputElement).value.toLowerCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
+        swap((children[i] as HTMLInputElement).value.toUpperCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
+        if (children[i].classList.contains("wrong"))
+            foundWrong = true;
+    }
+    if (!foundWrong) {
+        for (let i of children)
+            (i as HTMLInputElement).disabled = true;
+        allGood.setAttribute("style", "display: text");
     }
 }
