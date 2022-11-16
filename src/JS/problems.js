@@ -3,7 +3,7 @@ let valueSetting = 5;
 const letters = ["G", "C", "A", "T"];
 function generateProblem() {
     for (let i of problem.children)
-        i.disabled = false;
+        i.readOnly = false;
     currentProblem = [];
     problem.innerHTML = "";
     problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);

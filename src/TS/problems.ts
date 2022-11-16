@@ -4,7 +4,7 @@ const letters: string[] = ["G", "C", "A", "T"];
 
 function generateProblem(): void {
     for (let i of problem.children)
-        (i as HTMLInputElement).disabled = false;
+        (i as HTMLInputElement).readOnly = false;
     currentProblem = [];
     problem.innerHTML = "";
     problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);

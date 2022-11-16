@@ -61,7 +61,7 @@ function solve() {
     }
     if (!foundWrong) {
         for (let i of children)
-            i.disabled = true;
+            i.readOnly = true;
         allGood.setAttribute("style", "display: text");
     }
 }

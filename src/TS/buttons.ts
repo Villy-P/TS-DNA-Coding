@@ -72,7 +72,7 @@ function solve(): void {
     }
     if (!foundWrong) {
         for (let i of children)
-            (i as HTMLInputElement).disabled = true;
+            (i as HTMLInputElement).readOnly = true;
         allGood.setAttribute("style", "display: text");
     }
 }
