@@ -5,6 +5,7 @@ const letters: string[] = ["G", "C", "A", "T"];
 function generateProblem(): void {
     for (let i of problem.children)
         (i as HTMLInputElement).readOnly = false;
+    allGood.setAttribute("style", "display:none");
     currentProblem = [];
     problem.innerHTML = "";
     problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);
