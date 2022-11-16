@@ -14,7 +14,9 @@
     gap: 5px;
     background-color: black;
     padding: 10px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 40px 40px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .container > div, #problem > div {
