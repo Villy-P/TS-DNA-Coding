@@ -5,7 +5,7 @@ const problem: HTMLElement = document.getElementById("problem")!;
 const letters: string[] = ["G", "C", "A", "T"];
 
 function generateProblem(): void {
-    problem.setAttribute("style", `grid-template-columns: ${"minmax(50px, 100px) ".repeat(valueSetting)};`);
+    problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);
     for (let i = 0; i < valueSetting; i++) {
         const cell: HTMLDivElement = document.createElement("div");
         cell.innerHTML = generateRandomSequence();
