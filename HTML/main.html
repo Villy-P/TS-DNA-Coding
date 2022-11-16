@@ -11,7 +11,7 @@
     <h1 class="header center"><b>DNA Coding</b></h1>
     <h3 class="center"><i>by Valerius Petrini Jr.</i></h3>
 
-    <div class="centerButton">
+    <div class="center">
         <button id="activateChart" class="center" onclick="clickDisplayTranslationChart()">Show Translation Chart</button>
     </div>
 
@@ -72,10 +72,10 @@
 
     <br>
 
-    <div class="centerButton">
+    <div class="center">
         <label for="activities"></label>
         <select name="activities" id="activities">
-            <option value="dna-to-rna">Match DNA</option>
+            <option value="match-dna">Match DNA</option>
         </select>
 
         <label for="settings"></label>
@@ -90,9 +90,11 @@
 
     <br>
 
-    <div class="centerButton">
-        <button id="activateHint">Show Hint</button>
+    <div class="center">
+        <button id="activateHint" onclick="clickDisplayHint()">Show Hint</button>
     </div>
+
+    <p class="center" id="hint"></p>
 
     <script src="../src/JS/buttons.js"></script>
 </body>
