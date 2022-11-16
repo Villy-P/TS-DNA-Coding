@@ -33,6 +33,14 @@
     font-size: 30px;
 }
 
+.correct {
+    background-color: green;
+}
+
+.wrong {
+    background-color: red;
+}
+
 .First-mRNA-Base { grid-area: 1 / 1 / 2 / 2; }
 .A { grid-area: 1 / 4 / 2 / 5; }
 .G { grid-area: 1 / 5 / 2 / 6; }
