@@ -8,5 +8,6 @@ settingsDropdown.onchange = function () {
     generateProblem();
 };
 activitiesDropdown.onchange = function () {
+    hint.innerHTML = displayHint ? getHint() : "";
     generateProblem();
 };

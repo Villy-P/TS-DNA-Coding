@@ -20,6 +20,10 @@ function getHint() {
     switch (activitiesDropdown.value) {
         case "match-dna":
             return "<pre>A turns to T\nT turns to A\nG turns to C\nC turns to G\n</pre>";
+        case "dna-to-rna":
+            return "<pre>A turns to U\nT turns to A\nG turns to C\nC turns to G\n</pre>";
+        case "rna-to-amino-acid":
+            return "<pre>Use the translation chart.\nEither use the name or the shortened version of the name.\n</pre>";
         default:
             throw new Error("ID not found for: " + activitiesDropdown.value);
     }

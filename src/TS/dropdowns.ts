@@ -9,5 +9,6 @@ settingsDropdown.onchange = function() {
 }
 
 activitiesDropdown.onchange = function() {
+    hint.innerHTML = displayHint ? getHint() : "";
     generateProblem();
 }
