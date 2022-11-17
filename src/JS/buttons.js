@@ -1,4 +1,5 @@
 "use strict";
+console.log("Why, hello there!");
 let displayTranslationChart = false;
 let displayHint = false;
 let currentProblem = [];

@@ -1,3 +1,6 @@
+console.log("Why, hello there!");
+
+
 let displayTranslationChart: boolean = false;
 let displayHint: boolean = false;
 
