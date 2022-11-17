@@ -91,7 +91,7 @@ function getName(s: string): string {
     switch (s) {
         case "UUU": case "UUC":
             return "phenylalanine phe";
-        case "UAG": case "UUG": case "CUU": case "CUC": case "CUA": case "CUG":
+        case "UAG": case "UUG": case "UUA": case "CUU": case "CUC": case "CUA": case "CUG":
             return "leucine leu";
         case "AUU": case "AUC": case "AUA":
             return "isoleucine ile";
@@ -142,7 +142,8 @@ function solveAminoAcid(): void {
         child.classList.remove("correct");
         child.classList.remove("wrong");
         const name: string = getName(currentProblem[i - valueSetting].toUpperCase());
-        name.split(" ")[name.length - 1] == currentProblem[i] || name.split(" ").splice(-1, 1).join(" ") == currentProblem[i] ? child.classList.add("correct") : child.classList.add("wrong");
+        const splitName: string[] = name.split(" ");
+        splitName.pop() == child.value.toLowerCase() || splitName.join(" ") == child.value[i].toLowerCase() ? child.classList.add("correct") : child.classList.add("wrong");
         if (child.classList.contains("wrong"))
             hadWrong = true;
     }

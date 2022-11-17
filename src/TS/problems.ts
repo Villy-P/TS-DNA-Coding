@@ -6,8 +6,8 @@ const aminoLetter: string[] = ["A", "C", "G", "U"];
 function resetGrid(): void {
     for (let i of problem.children)
         (i as HTMLInputElement).readOnly = false;
+        currentProblem = [];
     allGood.setAttribute("style", "display:none");
-    currentProblem = [];
     problem.innerHTML = "";
     problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);
 }

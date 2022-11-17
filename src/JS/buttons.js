@@ -82,6 +82,7 @@ function getName(s) {
             return "phenylalanine phe";
         case "UAG":
         case "UUG":
+        case "UUA":
         case "CUU":
         case "CUC":
         case "CUA":
@@ -171,7 +172,8 @@ function solveAminoAcid() {
         child.classList.remove("correct");
         child.classList.remove("wrong");
         const name = getName(currentProblem[i - valueSetting].toUpperCase());
-        name.split(" ")[name.length - 1] == currentProblem[i] || name.split(" ").splice(-1, 1).join(" ") == currentProblem[i] ? child.classList.add("correct") : child.classList.add("wrong");
+        const splitName = name.split(" ");
+        splitName.pop() == child.value.toLowerCase() || splitName.join(" ") == child.value[i].toLowerCase() ? child.classList.add("correct") : child.classList.add("wrong");
         if (child.classList.contains("wrong"))
             hadWrong = true;
     }
