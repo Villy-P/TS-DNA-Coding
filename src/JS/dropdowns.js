@@ -7,3 +7,6 @@ settingsDropdown.onchange = function () {
     valueSetting = text !== "Random" ? text.split(" ")[0] : getRandomValue(1, 10);
     generateProblem();
 };
+activitiesDropdown.onchange = function () {
+    generateProblem();
+};

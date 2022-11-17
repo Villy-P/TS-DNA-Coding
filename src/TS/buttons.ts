@@ -44,7 +44,12 @@ function swap(s: string): string {
     for (let i of s.split("")) {
         switch (i) {
             case 'T':
-                str += 'A';
+                if (activitiesDropdown.value === "match-dna")
+                    str += 'A';
+                break;
+            case 'U':
+                if (activitiesDropdown.value !== "match-dna")
+                    str += 'A'
                 break;
             case 'A':
                 str += 'T';

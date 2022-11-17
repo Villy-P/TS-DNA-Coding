@@ -34,7 +34,12 @@ function swap(s) {
     for (let i of s.split("")) {
         switch (i) {
             case 'T':
-                str += 'A';
+                if (activitiesDropdown.value === "match-dna")
+                    str += 'A';
+                break;
+            case 'U':
+                if (activitiesDropdown.value !== "match-dna")
+                    str += 'A';
                 break;
             case 'A':
                 str += 'T';
@@ -53,10 +58,11 @@ function solve() {
     const children = problem.children;
     let hadWrong = false;
     for (let i = valueSetting; i < children.length; i++) {
-        children[i].classList.remove("correct");
-        children[i].classList.remove("wrong");
-        swap(children[i].value.toUpperCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
-        if (children[i].classList.contains("wrong"))
+        const child = children[i];
+        child.classList.remove("correct");
+        child.classList.remove("wrong");
+        swap(child.value.toUpperCase()) == currentProblem[i - valueSetting] ? child.classList.add("correct") : child.classList.add("wrong");
+        if (child.classList.contains("wrong"))
             hadWrong = true;
     }
     for (let i of children)
