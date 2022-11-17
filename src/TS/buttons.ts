@@ -64,10 +64,11 @@ function solve(): void {
     const children: HTMLCollection = problem.children;
     let hadWrong: boolean = false;
     for (let i = valueSetting; i < children.length; i++) {
-        children[i].classList.remove("correct");
-        children[i].classList.remove("wrong");
-        swap((children[i] as HTMLInputElement).value.toUpperCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
-        if ((children[i] as HTMLInputElement).classList.contains("wrong"))
+        const child: HTMLInputElement = children[i] as HTMLInputElement;
+        child.classList.remove("correct");
+        child.classList.remove("wrong");
+        swap(child.value.toUpperCase()) == currentProblem[i - valueSetting] ? child.classList.add("correct") : child.classList.add("wrong");
+        if (child.classList.contains("wrong"))
             hadWrong = true;
     }
     for (let i of children)
