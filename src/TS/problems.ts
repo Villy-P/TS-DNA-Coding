@@ -2,13 +2,17 @@ let valueSetting: number = 1;
 
 const letters: string[] = ["G", "C", "A", "T"];
 
-function generateProblem(): void {
+function resetGrid(): void {
     for (let i of problem.children)
         (i as HTMLInputElement).readOnly = false;
     allGood.setAttribute("style", "display:none");
     currentProblem = [];
     problem.innerHTML = "";
     problem.setAttribute("style", `grid-template-columns: ${"minmax(69px, 100px) ".repeat(valueSetting)};`);
+}
+
+function generateProblem(): void {
+    resetGrid();
     for (let i = 0; i < valueSetting; i++) {
         const cell: HTMLDivElement = document.createElement("div");
         cell.innerHTML = generateRandomSequence();
