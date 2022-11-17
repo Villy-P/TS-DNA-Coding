@@ -62,17 +62,13 @@ function swap(s: string): string {
 
 function solve(): void {
     const children: HTMLCollection = problem.children;
-    let foundWrong: boolean = false;
     for (let i = valueSetting; i < children.length; i++) {
         children[i].classList.remove("correct");
         children[i].classList.remove("wrong");
         swap((children[i] as HTMLInputElement).value.toUpperCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
-        if (children[i].classList.contains("wrong"))
-            foundWrong = true;
     }
-    if (!foundWrong) {
-        for (let i of children)
+    for (let i of children)
+        if (i.classList.contains("correct"))
             (i as HTMLInputElement).readOnly = true;
-        allGood.setAttribute("style", "display: text");
-    }
+    allGood.setAttribute("style", "display: text");
 }
