@@ -1,5 +1,5 @@
 "use strict";
-let valueSetting = 5;
+let valueSetting = 1;
 const letters = ["G", "C", "A", "T"];
 function generateProblem() {
     for (let i of problem.children)

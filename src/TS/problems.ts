@@ -1,4 +1,4 @@
-let valueSetting: number = 5;
+let valueSetting: number = 1;
 
 const letters: string[] = ["G", "C", "A", "T"];
 
