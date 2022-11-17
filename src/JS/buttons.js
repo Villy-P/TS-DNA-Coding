@@ -51,13 +51,17 @@ function swap(s) {
 }
 function solve() {
     const children = problem.children;
+    let hadWrong = false;
     for (let i = valueSetting; i < children.length; i++) {
         children[i].classList.remove("correct");
         children[i].classList.remove("wrong");
         swap(children[i].value.toUpperCase()) == currentProblem[i - valueSetting] ? children[i].classList.add("correct") : children[i].classList.add("wrong");
+        if (children[i].classList.contains("wrong"))
+            hadWrong = true;
     }
     for (let i of children)
         if (i.classList.contains("correct"))
             i.readOnly = true;
-    allGood.setAttribute("style", "display: text");
+    if (!hadWrong)
+        allGood.setAttribute("style", "display: text");
 }
