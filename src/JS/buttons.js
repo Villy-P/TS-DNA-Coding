@@ -75,3 +75,112 @@ function solve() {
     if (!hadWrong)
         allGood.setAttribute("style", "display: text");
 }
+function getName(s) {
+    switch (s) {
+        case "UUU":
+        case "UUC":
+            return "phenylalanine phe";
+        case "UAG":
+        case "UUG":
+        case "CUU":
+        case "CUC":
+        case "CUA":
+        case "CUG":
+            return "leucine leu";
+        case "AUU":
+        case "AUC":
+        case "AUA":
+            return "isoleucine ile";
+        case "AUG":
+            return "methionine met";
+        case "GUU":
+        case "GUC":
+        case "GUA":
+        case "GUG":
+            return "valine val";
+        case "UCU":
+        case "UCC":
+        case "UCA":
+        case "UCG":
+        case "AGU":
+        case "AGC":
+            return "serine ser";
+        case "CCU":
+        case "CCA":
+        case "CCC":
+        case "CCG":
+            return "proline pro";
+        case "ACU":
+        case "ACA":
+        case "ACG":
+        case "ACC":
+            return "threonine thr";
+        case "GCU":
+        case "GCC":
+        case "GCG":
+        case "GCA":
+            return "alanine ala";
+        case "UAU":
+        case "UAC":
+            return "tyrosine tyr";
+        case "UAA":
+        case "UAG":
+        case "UGA":
+            return "stop stop";
+        case "CAU":
+        case "CAC":
+            return "histidine his";
+        case "CAA":
+        case "CAG":
+            return "glutamine glu";
+        case "AAU":
+        case "AAC":
+            return "lysine lys";
+        case "GAU":
+        case "GAC":
+            return "aspartic acid asp";
+        case "GAA":
+        case "GAG":
+            return "glutamic acid glu";
+        case "UGU":
+        case "UGC":
+            return "cysteine cys";
+        case "UGG":
+            return "tryptophan trp";
+        case "CGU":
+        case "CGA":
+        case "CGC":
+        case "CGG":
+        case "AGA":
+        case "AGG":
+            return "arginine arg";
+        case "GGU":
+        case "GGG":
+        case "GGC":
+        case "GGA":
+            return "glycine gly";
+        default:
+            throw new Error("Invlaid sequence: " + s);
+    }
+}
+function solveAminoAcid() {
+    const children = problem.children;
+    let hadWrong = false;
+    for (let i = valueSetting; i < children.length; i++) {
+        const child = children[i];
+        child.classList.remove("correct");
+        child.classList.remove("wrong");
+        const name = getName(currentProblem[i - valueSetting].toUpperCase());
+        name.split(" ")[name.length - 1] == currentProblem[i] || name.split(" ").splice(-1, 1).join(" ") == currentProblem[i] ? child.classList.add("correct") : child.classList.add("wrong");
+        if (child.classList.contains("wrong"))
+            hadWrong = true;
+    }
+    for (let i of children)
+        if (i.classList.contains("correct"))
+            i.readOnly = true;
+    if (!hadWrong)
+        allGood.setAttribute("style", "display: text");
+}
+function solveButtonClicked() {
+    activitiesDropdown.value === "rna-to-amino-acid" ? solveAminoAcid() : solve();
+}

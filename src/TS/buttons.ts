@@ -141,7 +141,8 @@ function solveAminoAcid(): void {
         const child: HTMLInputElement = children[i] as HTMLInputElement;
         child.classList.remove("correct");
         child.classList.remove("wrong");
-        swap(child.value.toUpperCase()) == currentProblem[i - valueSetting] ? child.classList.add("correct") : child.classList.add("wrong");
+        const name: string = getName(currentProblem[i - valueSetting].toUpperCase());
+        name.split(" ")[name.length - 1] == currentProblem[i] || name.split(" ").splice(-1, 1).join(" ") == currentProblem[i] ? child.classList.add("correct") : child.classList.add("wrong");
         if (child.classList.contains("wrong"))
             hadWrong = true;
     }
@@ -150,4 +151,8 @@ function solveAminoAcid(): void {
             (i as HTMLInputElement).readOnly = true;
     if (!hadWrong)
         allGood.setAttribute("style", "display: text");
+}
+
+function solveButtonClicked(): void {
+    activitiesDropdown.value === "rna-to-amino-acid" ? solveAminoAcid() : solve();
 }

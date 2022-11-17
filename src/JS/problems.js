@@ -1,6 +1,7 @@
 "use strict";
 let valueSetting = 1;
 const letters = ["G", "C", "A", "T"];
+const aminoLetter = ["A", "C", "G", "U"];
 function resetGrid() {
     for (let i of problem.children)
         i.readOnly = false;
@@ -27,8 +28,9 @@ function getRandomValueFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 function generateRandomSequence() {
-    return getRandomValueFromArray(letters) +
-        getRandomValueFromArray(letters) +
-        getRandomValueFromArray(letters);
+    const l = activitiesDropdown.value === "rna-to-amino-acid" ? aminoLetter : letters;
+    return getRandomValueFromArray(l) +
+        getRandomValueFromArray(l) +
+        getRandomValueFromArray(l);
 }
 generateProblem();

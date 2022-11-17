@@ -1,6 +1,7 @@
 let valueSetting: number = 1;
 
 const letters: string[] = ["G", "C", "A", "T"];
+const aminoLetter: string[] = ["A", "C", "G", "U"];
 
 function resetGrid(): void {
     for (let i of problem.children)
@@ -31,9 +32,10 @@ function getRandomValueFromArray(array: string[]): string {
 }
 
 function generateRandomSequence(): string {
-    return getRandomValueFromArray(letters) + 
-           getRandomValueFromArray(letters) + 
-           getRandomValueFromArray(letters);
+    const l: string[] = activitiesDropdown.value === "rna-to-amino-acid" ? aminoLetter : letters;
+    return getRandomValueFromArray(l) + 
+           getRandomValueFromArray(l) + 
+           getRandomValueFromArray(l);
 }
 
 generateProblem();
